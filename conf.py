@@ -195,7 +195,6 @@ notfound_context = {
     'title': 'Page Not Found',
     'body': '''
 <h1>Page Not Found</h1>
-<p>Sorry, we couldn't find that page.</p>
 <p>
 We're sorry but we are unable to find the requested page.  Please use the table of contents or
 the search box in the left-hand sidebar to locate your topic.
@@ -208,7 +207,6 @@ project site</a>.  Thanks.
 </p>
 <div id="test"></div>
 <script>
-    // document.getElementById('test').innerHTML += '<p>Test Result = True</p>'
     var target_language = 'en';
     var target_version = '';
     var src_host = window.location.hostname;
@@ -216,7 +214,7 @@ project site</a>.  Thanks.
     var src_path = window.location.pathname;
     var src_path_parts = src_path.split('/');
     var target_path = '';
-    var target_url = src_protocol + '//' + src_host + '/en/not_found.html';
+    var target_url = src_protocol + '//' + src_host + '/en/latest/not_found.html';
 
     const re_language = /^[a-z][a-z](-[A-Z][A-Z])?$/;
     const re_version_1 = /^[0-9][0-9\.]*$/;
@@ -236,7 +234,7 @@ project site</a>.  Thanks.
 
     function is_rtd_version(test_version) {
         document.getElementById('test').innerHTML += '<p>RTD Test Version = ' + test_version + '</p>';
-        if ((test_version.search(re_version_1) < 0) || (test_version.search(re_version_2) < 0)) {
+        if ((test_version.search(re_version_1) < 0) && (test_version.search(re_version_2) < 0)) {
             document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
             return false;
         }
