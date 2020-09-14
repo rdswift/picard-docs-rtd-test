@@ -4,13 +4,16 @@
 .. A copy of the license is available at https://creativecommons.org/publicdomain/zero/1.0
 
 
-.. Master File for Building PDF Documents
+Troubleshooting
+===============
 
-Appendices
-==========
+.. This section provides information on how to get started using MusicBrainz Picard.
 
 .. toctree::
+   :hidden:
 
-   technical/plugins_api_pdf
-   technical/tag_mapping_pdf
-   technical/command_line_pdf
+   troubleshooting
+   no_coverart
+   missing_tags
+   not_saving
+   stopped_working

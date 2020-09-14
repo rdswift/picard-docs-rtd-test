@@ -643,7 +643,7 @@ def do_build(target=None, language='', clean=False):
 
     if target == 'html':
         build_html(language=language)
-        save_version_info()
+        # save_version_info()
     elif target == 'pdf':
         build_pdf(language=language)
     elif target == 'epub':

@@ -12,6 +12,6 @@ Getting Started
 .. toctree::
    :hidden:
 
-   getting_started/download
-   getting_started/screen_main
-   getting_started/status_icons
+   download
+   screen_main
+   status_icons

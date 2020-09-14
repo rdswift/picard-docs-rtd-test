@@ -116,7 +116,7 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_js_files = ['/version_links.js']
+# html_js_files = ['/version_links.js']
 
 html_context = {
     'extra_css_files': [
@@ -175,7 +175,7 @@ epub_contributor = 'Members of the MusicBrainz Community'
 
 epub_uid = 'MusicBrainzPicardUserGuide'
 
-epub_cover = ('_static/epub_cover.png', 'epub-cover.html')
+# epub_cover = ('_static/epub_cover.png', 'epub-cover.html')
 # epub_cover = ('_static/epub_cover.png', '')
 
 # epub_show_urls = 'inline'

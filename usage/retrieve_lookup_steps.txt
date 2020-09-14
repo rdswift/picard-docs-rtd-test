@@ -12,7 +12,7 @@ The steps to follow to lookup files are:
    For ease of use it is recommended to use the internal File Browser to manage file system interactions.  This is
    enabled from :menuselection:`"View --> File Browser"`.
 
-   .. image:: ../images/lookup_1.png
+   .. image:: images/lookup_1.png
       :width: 100%
 
    |
@@ -20,14 +20,14 @@ The steps to follow to lookup files are:
 2. Drag the selected directory or files to the "Unclustered Files" folder, and wait for Picard to process the files -
    the names will turn from grey to black.
 
-   .. image:: ../images/lookup_2.png
+   .. image:: images/lookup_2.png
       :width: 100%
 
    |
 
 3. Use :menuselection:`"Tools --> Cluster"` to group the files into album clusters.
 
-   .. image:: ../images/lookup_3.png
+   .. image:: images/lookup_3.png
       :width: 100%
 
    |
@@ -37,7 +37,7 @@ The steps to follow to lookup files are:
 
    A music symbol in front of a track number in the right-hand pane indicates that there has been no file assigned to the track.
 
-   .. image:: ../images/lookup_5.png
+   .. image:: images/lookup_5.png
       :width: 100%
 
    |

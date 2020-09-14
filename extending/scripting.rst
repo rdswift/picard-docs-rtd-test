@@ -21,7 +21,7 @@ and there is a thread specific to `file naming and script snippets
 
 .. seealso::
 
-   Please refer to the section on :doc:`Scripts <extending/scripts>` in :doc:`Extending Picard <extending/extending>`
+   Please refer to the section on :doc:`Scripts <scripts>` in :doc:`Extending Picard <extending>`
    for additional details about the two types of scripts, including how and when each of the scripts are executed.
 
 .. index::
@@ -43,7 +43,7 @@ a backslash.
 Metadata Variables
 ------------------
 
-See :doc:`variables/variables` for the list of the variables provided by Picard.
+See :doc:`../variables/variables` for the list of the variables provided by Picard.
 
 Picard's variables can be either simple variables containing a single text
 string, or multi-value variables containing multiple text strings. In scripts, multi-value
@@ -56,8 +56,8 @@ semicolon ";", except when used with special multi-value functions.
    -------------------
 
    The full list of available scripting functions is available, either
-   :doc:`sorted alphabetically <functions/list_by_name>` or
-   :doc:`grouped by function type <functions/list_by_type>`.
+   :doc:`sorted alphabetically <../functions/list_by_name>` or
+   :doc:`grouped by function type <../functions/list_by_type>`.
 
 .. only:: latex
 

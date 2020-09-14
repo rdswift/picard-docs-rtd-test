@@ -6,25 +6,32 @@
 
 .. Master File for Building PDF Documents
 
+:orphan:
+
 MusicBrainz Picard
 ==================
 
+
+.. include:: image_links.txt
+
+
 .. toctree::
 
-   introduction
-   glossary
-   pdf_starting
+   about_picard/introduction
+   about_picard/glossary
+   about_picard/acknowledgements
+   getting_started/pdf_starting
    config/configuration
    variables/variables
-   scripting
+   extending/scripting
    functions/list_by_type
    usage/using
    workflows/workflows
    usage/other
    extending/extending
-   pdf_troubleshooting
+   troubleshooting/pdf_troubleshooting
    faq/faq
-   pdf_appendices
+   appendices/pdf_appendices
 
 ..   examples/examples
 ..   technical/plugins_api_pdf

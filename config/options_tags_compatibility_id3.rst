@@ -10,7 +10,7 @@ ID3 Files
 .. index::
    single: configuration; id3 tag options
 
-.. image:: ../images/options-tags-compatibility-id3.png
+.. image:: images/options-tags-compatibility-id3.png
    :width: 100 %
 
 **ID3v2 version**
