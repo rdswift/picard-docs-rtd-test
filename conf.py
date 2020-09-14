@@ -256,8 +256,12 @@ project site</a>.  Thanks.
         return true;
     }
 
-    var counter = 1;
-    if (!is_rtd_version(src_path_parts[counter])) {
+    function test_url() {
+        var counter = 1;
+        if ((is_language(src_path_parts[counter])) && (is_rtd_version(src_path_parts[counter + 1]))) {
+            document.getElementById('test').innerHTML += '<p>URL is valid for ReadTheDocs.</p>';
+            return true;
+        }
         if (is_version(src_path_parts[counter])) {
             counter += 1;
             document.getElementById('test').innerHTML += '<p>counter = ' + counter + '</br>length = ' + src_path_parts.length + '</p>';
@@ -276,6 +280,8 @@ project site</a>.  Thanks.
             }
         }
     }
+
+    test_url();
 </script>
 ''',
 }
