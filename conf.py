@@ -234,12 +234,18 @@ project site</a>.  Thanks.
 
     function is_rtd_version(test_version) {
         document.getElementById('test').innerHTML += '<p>RTD Test Version = ' + test_version + '</p>';
-        if ((test_version.search(re_version_1) < 0) && (test_version.search(re_version_2) < 0)) {
-            document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
-            return false;
-        }
-        document.getElementById('test').innerHTML += '<p>Test Result = True</p>';
-        return true;
+        var test_result = (test_version.search(re_version_1) >= 0);
+        var combined_result = test_result;
+        document.getElementById('test').innerHTML += '<p>Test Result 1 = ' + test_result + '</p>';
+        test_result = (test_version.search(re_version_2) >= 0);
+        combined_result = combined_result || test_result;
+        document.getElementById('test').innerHTML += '<p>Test Result 2 = ' + test_result + '</p>';
+        return combined_result;
+//        if (test_result) {
+//            return true;
+//        }
+//        document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
+//        return false;
     }
 
     function is_version(test_version) {
