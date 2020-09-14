@@ -205,10 +205,9 @@ If you believe that you have received this message in error, please report it on
 <a href="https://github.com/rdswift/picard-docs/issues/new/choose" target="_blank">documentation
 project site</a>.  Thanks.
 </p>
-<div id="test"></div>
 <script>
     var target_language = 'en';
-    var target_version = '';
+    var target_version = 'latest';
     var src_host = window.location.hostname;
     var src_protocol = window.location.protocol;
     var src_path = window.location.pathname;
@@ -222,53 +221,32 @@ project site</a>.  Thanks.
     const re_version_3 = /^v[0-9][0-9\.]*$/;
 
     function is_language(test_language) {
-        document.getElementById('test').innerHTML += '<p>Test Language = ' + test_language + '</p>';
         if (test_language.search(re_language) < 0) {
-            document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
             return false
         }
         target_language = test_language;
-        document.getElementById('test').innerHTML += '<p>Test Result = True</p>';
         return true;
     }
 
     function is_rtd_version(test_version) {
-        document.getElementById('test').innerHTML += '<p>RTD Test Version = ' + test_version + '</p>';
-        var test_result = (test_version.search(re_version_1) >= 0);
-        var combined_result = test_result;
-        document.getElementById('test').innerHTML += '<p>Test Result 1 = ' + test_result + '</p>';
-        test_result = (test_version.search(re_version_2) >= 0);
-        combined_result = combined_result || test_result;
-        document.getElementById('test').innerHTML += '<p>Test Result 2 = ' + test_result + '</p>';
-        return combined_result;
-//        if (test_result) {
-//            return true;
-//        }
-//        document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
-//        return false;
+        return ((test_version.search(re_version_1) >= 0) || (test_version.search(re_version_2) >= 0));
     }
 
     function is_version(test_version) {
-        document.getElementById('test').innerHTML += '<p>Test Version = ' + test_version + '</p>';
         if (test_version.search(re_version_3) < 0) {
-            document.getElementById('test').innerHTML += '<p>Test Result = False</p>';
-            target_version = 'latest';
             return false;
         }
         target_version = test_version.substring(1, 1000);
-        document.getElementById('test').innerHTML += '<p>Test Result = True</p>';
         return true;
     }
 
     function test_url() {
         var counter = 1;
         if ((is_language(src_path_parts[counter])) && (is_rtd_version(src_path_parts[counter + 1]))) {
-            document.getElementById('test').innerHTML += '<p>URL is valid for ReadTheDocs.</p>';
             return true;
         }
         if (is_version(src_path_parts[counter])) {
             counter += 1;
-            document.getElementById('test').innerHTML += '<p>counter = ' + counter + '</br>length = ' + src_path_parts.length + '</p>';
         }
         if (counter < src_path_parts.length) {
             if (is_language(src_path_parts[counter])) {
@@ -280,7 +258,7 @@ project site</a>.  Thanks.
                 }
                 target_url = src_protocol + '//' + src_host + target_path;
                 document.getElementById('content').innerHTML = '<p>The page may have been moved to <a href="' + target_url + '">' + target_url + '</a>.</p>';
-                // window.location.replace(target_url);
+                window.location.replace(target_url);
             }
         }
     }
