@@ -66,6 +66,7 @@ master_doc = 'index'
 # ones.
 extensions = [
     "recommonmark",
+    "notfound.extension",
     # "sphinx_rtd_theme",
     # "picard_theme",
 ]
@@ -183,3 +184,21 @@ epub_show_urls = 'footnote'
 # epub_show_urls = 'no'
 
 epub_use_index = True
+
+
+# -- Options for custom 404 page --------------------------------------
+
+# sphinx-notfound-page
+# https://github.com/readthedocs/sphinx-notfound-page
+
+notfound_context = {
+    'title': 'Page Not Found',
+    'body': '''
+<h1>Page Not Found</h1>
+<p>Sorry, we couldn't find that page.</p>
+<div id="redirect_info"><p>Try using the search box or go to the homepage.</p></div>
+<script>
+    document.getElementById('redirect_info').innerHTML += '<p>Test Result = True</p>'
+</script>
+''',
+}
