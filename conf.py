@@ -43,7 +43,7 @@ version = release
 default_language = 'en'
 supported_languages = [
     ('en', 'English'),
-    # ('fr', 'Française'),
+    ('fr', 'Française'),
     # ('de', 'Deutsche'),
     # ('es', 'Española'),
 ]

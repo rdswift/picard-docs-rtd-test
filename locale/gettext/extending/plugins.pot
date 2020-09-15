@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-23 10:29-0600\n"
+"POT-Creation-Date: 2020-09-15 16:26-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,5 +61,5 @@ msgid "Note that plugins are not limited to one of those areas.  A single plugin
 msgstr ""
 
 #: ../../extending/plugins.rst:59
-msgid "The :doc:`Plugins API <../technical/plugins_api>` provides information regarding the different plugin hooks available, along with some examples of their use.  There is also a list of the `available plugins <https://picard.musicbrainz.org/plugins/>`_ that have been submitted to the MusicBrainz Picard repository shown on the Picard website."
+msgid "The :doc:`Plugins API <../appendices/plugins_api>` provides information regarding the different plugin hooks available, along with some examples of their use.  There is also a list of the `available plugins <https://picard.musicbrainz.org/plugins/>`_ that have been submitted to the MusicBrainz Picard repository shown on the Picard website."
 msgstr ""

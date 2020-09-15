@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-23 10:29-0600\n"
+"POT-Creation-Date: 2020-09-15 16:26-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,5 +33,5 @@ msgid "Below the checkbox are two columns showing the list of scripts in the lef
 msgstr ""
 
 #: ../../config/options_scripting.rst:27
-msgid "For additional information about scripting please see the \":doc:`Scripts <../extending/scripts>`\" and \":doc:`Scripting <../scripting>`\" sections, as well as \":doc:`Tags & Variables <../variables/variables>`\"."
+msgid "For additional information about scripting please see the \":doc:`Scripts <../extending/scripts>`\" and \":doc:`Scripting <../extending/scripting>`\" sections, as well as \":doc:`Tags & Variables <../variables/variables>`\"."
 msgstr ""

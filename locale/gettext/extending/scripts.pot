@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-23 10:29-0600\n"
+"POT-Creation-Date: 2020-09-15 16:26-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Scripts"
 msgstr ""
 
 #: ../../extending/scripts.rst:12
-msgid "There are two types of scripts used in Picard: the file naming script and tagging scripts. These are managed from the \"File Naming\" and \"Scripting\" sections of the :menuselection:`\"Options --> Options...\"` menu. All scripts are written using the :doc:`Picard scripting language <../scripting>`. Scripts are often discussed in the `MetaBrainz Community Forum <https://community.metabrainz.org/>`_, and there is a thread specific to `file naming and script snippets <https://community.metabrainz.org/t/repository-for-neat-file-name-string-patterns-and-tagger-script-snippets/2786/>`_."
+msgid "There are two types of scripts used in Picard: the file naming script and tagging scripts. These are managed from the \"File Naming\" and \"Scripting\" sections of the :menuselection:`\"Options --> Options...\"` menu. All scripts are written using the :doc:`Picard scripting language <scripting>`. Scripts are often discussed in the `MetaBrainz Community Forum <https://community.metabrainz.org/>`_, and there is a thread specific to `file naming and script snippets <https://community.metabrainz.org/t/repository-for-neat-file-name-string-patterns-and-tagger-script-snippets/2786/>`_."
 msgstr ""
 
 #: ../../extending/scripts.rst:19
