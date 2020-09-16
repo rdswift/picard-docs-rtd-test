@@ -18,7 +18,7 @@ import restructuredtext_lint
 import conf
 
 SCRIPT_NAME = 'Picard Docs Builder'
-SCRIPT_VERS = '0.07'
+SCRIPT_VERS = '0.08'
 SCRIPT_COPYRIGHT = '2020'
 SCRIPT_AUTHOR = 'Bob Swift'
 
@@ -854,18 +854,18 @@ def main():
 
         elif args.build_target == 'po':
             build_pot()
-            for lang in process_languages:
-                if lang != DEFAULT_LANGUAGE:
-                    update_po(lang)
+            # for lang in process_languages:
+            #     if lang != DEFAULT_LANGUAGE:
+            #         update_po(lang)
 
         elif args.build_target == 'pot':
             build_pot()
-            check_sphinx_intl()
-            print('\nUpdating PO files for other languages.')
-            for lang in LANGUAGE_LIST.keys():
-                if lang != DEFAULT_LANGUAGE:
-                    print("\n\nUpdating the '{0}' ({1}) files.\n".format(lang, LANGUAGE_LIST[lang]))
-                    update_po(lang)
+            # check_sphinx_intl()
+            # print('\nUpdating PO files for other languages.')
+            # for lang in LANGUAGE_LIST.keys():
+            #     if lang != DEFAULT_LANGUAGE:
+            #         print("\n\nUpdating the '{0}' ({1}) files.\n".format(lang, LANGUAGE_LIST[lang]))
+            #         update_po(lang)
 
         elif args.build_target == 'clean':
             for target, target_dir in [('html', 'html'), ('pdf', 'latex')]:
