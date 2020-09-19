@@ -57,7 +57,8 @@ SPHINX_GETTEXT_DIR = os.path.join(SPHINX_LOCALE_DIR, 'gettext')
 SPHINX_BUILD_TIMEOUT = 300
 SPHINX_BUILD_TARGETS = {
     'html': {'dir': 'html', 'cmd': 'html', 'extra': ''},
-    'pdf': {'dir': 'latex', 'cmd': 'latex', 'extra': ''},
+    # 'pdf': {'dir': 'latex', 'cmd': 'latex', 'extra': ''},
+    'pdf': {'dir': 'latex', 'cmd': 'latexpdf', 'extra': ''},
     # 'epub': {'dir': 'epub', 'cmd': 'epub', 'extra': '-D master_doc="epub"'},
     'epub': {'dir': 'epub', 'cmd': 'epub', 'extra': '-D master_doc=epub'},
 }
@@ -656,15 +657,15 @@ def do_build(target=None, language='', clean=False):
     #     command = command.append(SPHINX_BUILD_TARGETS[target]['extra'])
     # if language_option:
     #     command = command.append(language_option)
-    command = '{0} -b {1} {2} {3} -c . {4} {5}'.format(
+    command = '{0} -M {1} {2} {3} -c . {4} {5}'.format(
         SPHINX_BUILD,
         SPHINX_BUILD_TARGETS[target]['cmd'],
         SPHINX_SOURCE_DIR,
-        # SPHINX_BUILD_DIR,
-        os.path.join(SPHINX_BUILD_DIR, SPHINX_BUILD_TARGETS[target]['dir']),
+        SPHINX_BUILD_DIR,
+        # os.path.join(SPHINX_BUILD_DIR, SPHINX_BUILD_TARGETS[target]['dir']),
         SPHINX_BUILD_TARGETS[target]['extra'],
         language_option,
-        ).strip()
+        ).strip().replace('  ', ' ')
     print('\nBuilding with command: {0}\n'.format(command))
     try:
         # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
@@ -743,11 +744,11 @@ def build_pdf(language=''):
     pdf_dir = os.path.join(SPHINX_BUILD_DIR, SPHINX_BUILD_TARGETS['pdf']['dir'])
     current_dir = os.getcwd()
     try:
-        os.chdir(pdf_dir)
-        exit_code = subprocess.call('make', timeout=SPHINX_BUILD_TIMEOUT)
-        os.chdir(current_dir)
-        if exit_code:
-            exit_with_code(exit_code)
+        # os.chdir(pdf_dir)
+        # exit_code = subprocess.run('make pdflatex', shell=True, check=True, capture_output=False, timeout=SPHINX_BUILD_TIMEOUT).returncode
+        # os.chdir(current_dir)
+        # if exit_code:
+        #     exit_with_code(exit_code)
         pdf_file = os.path.join(SPHINX_BUILD_DIR, 'latex', 'musicbrainzpicard.pdf')
         target_file = os.path.join(OUTPUT_DIR, 'MusicBrainz_Picard_{0}_[{1}].pdf'.format(conf.version, language))
         # Multiple checks if file exists to accommodate race condition in Windows
@@ -790,7 +791,7 @@ def build_pot():
     """
     check_sphinx_build()
     # command = ' '.join([SPHINX_BUILD, '-M', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR, '-c .', '-D language={0}'.format(DEFAULT_LANGUAGE)])
-    command = ' '.join([SPHINX_BUILD, '-b', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR + '/gettext', '-c .', '-D language={0}'.format(DEFAULT_LANGUAGE)])
+    # command = ' '.join([SPHINX_BUILD, '-b', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR + '/gettext', '-c .', '-D language={0}'.format(DEFAULT_LANGUAGE)])
     command = ' '.join([SPHINX_BUILD, '-b', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR + '/gettext', '-c .'])
     print('Extracting POT files with command: {0}\n'.format(command))
     # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
