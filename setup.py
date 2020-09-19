@@ -816,7 +816,7 @@ def update_po(language):
     # command = ' '.join([SPHINX_INTL, 'build', '-d', '"' + SPHINX_GETTEXT_DIR + '"', '-o', '"' + SPHINX_LOCALE_DIR + '"', '-l', language])
     # command = ' '.join([SPHINX_INTL, 'update', '-l', language])
     print('Updating PO files with command: {0}\n'.format(command))
-    exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
+    exit_code = subprocess.run(command, shell=True, timeout=SPHINX_BUILD_TIMEOUT)
     if exit_code:
         exit_with_code(exit_code)
 
