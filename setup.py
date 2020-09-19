@@ -793,7 +793,8 @@ def build_pot():
     command = ' '.join([SPHINX_BUILD, '-b', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR + '/gettext', '-c .', '-D language={0}'.format(DEFAULT_LANGUAGE)])
     command = ' '.join([SPHINX_BUILD, '-b', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR + '/gettext', '-c .'])
     print('Extracting POT files with command: {0}\n'.format(command))
-    exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
+    # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
+    exit_code = subprocess.run(command, shell=True, check=True, capture_output=False, timeout=SPHINX_BUILD_TIMEOUT).returncode
     if exit_code:
         exit_with_code(exit_code)
 
