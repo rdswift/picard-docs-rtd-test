@@ -438,7 +438,7 @@ def check_sphinx_intl():
     command = "{0} --help".format(SPHINX_INTL,)
     try:
         # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
-        exit_code = subprocess.run(command, shell=True, check=True, capture_output=True, timeout=SPHINX_BUILD_TIMEOUT).returncode
+        exit_code = subprocess.run(command, shell=True, check=False, capture_output=True, timeout=SPHINX_BUILD_TIMEOUT).returncode
         # print("\n\nexit_code = {0}\n\n".format(exit_code))
         # exit_code = 1
         # subprocess.run('ls -al', shell=True, check=True)
