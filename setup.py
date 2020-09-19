@@ -812,7 +812,7 @@ def update_po(language):
     """
     check_sphinx_intl()
     # command = ' '.join([SPHINX_INTL, 'update', '-p', '"' + os.path.join(SPHINX_LOCALE_DIR, SPHINX_GETTEXT_DIR) + '"', '-l', language])
-    command = ' '.join([SPHINX_INTL, 'update', '-p', '"' + SPHINX_GETTEXT_DIR + '"', '-l', language])
+    command = ' '.join([SPHINX_INTL, 'update', '-p', SPHINX_GETTEXT_DIR, '-l', language])
     # command = ' '.join([SPHINX_INTL, 'build', '-d', '"' + SPHINX_GETTEXT_DIR + '"', '-o', '"' + SPHINX_LOCALE_DIR + '"', '-l', language])
     # command = ' '.join([SPHINX_INTL, 'update', '-l', language])
     print('Updating PO files with command: {0}\n'.format(command))
