@@ -789,7 +789,7 @@ def build_pot():
     the supported languages.
     """
     check_sphinx_build()
-    command = ' '.join([SPHINX_BUILD, '-M', 'gettext', '"' + SPHINX_SOURCE_DIR + '"', '"' + SPHINX_LOCALE_DIR + '"', '-c', '.', '-D', 'language={0}'.format(DEFAULT_LANGUAGE)])
+    command = ' '.join([SPHINX_BUILD, '-M', 'gettext', SPHINX_SOURCE_DIR, SPHINX_LOCALE_DIR, '-c .', '-D language={0}'.format(DEFAULT_LANGUAGE)])
     print('Extracting POT files with command: {0}\n'.format(command))
     exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
     if exit_code:
