@@ -413,19 +413,21 @@ def run_lint(root_dir, ignore_info=False, fail_on_warnings=False):
 def check_sphinx_build():
     """Check if sphinx-build is available in current path.
     """
-    with open(os.devnull, 'w') as devnull:
-        try:
-            subprocess.call([SPHINX_BUILD, '--version'], stdout=devnull, stderr=devnull)
-            return
-        except FileNotFoundError:
-            pass
-    print("The '{0}' command was not found.".format(SPHINX_BUILD))
-    exit_with_code(1)
+    return
+    # with open(os.devnull, 'w') as devnull:
+    #     try:
+    #         subprocess.call([SPHINX_BUILD, '--version'], stdout=devnull, stderr=devnull)
+    #         return
+    #     except FileNotFoundError:
+    #         pass
+    # print("The '{0}' command was not found.".format(SPHINX_BUILD))
+    # exit_with_code(1)
 
 
 def check_sphinx_intl():
     """Check if sphinx-intl is available in current path.
     """
+    return
     # with open(os.devnull, 'w') as devnull:
     #     try:
     #         subprocess.call([SPHINX_INTL, '--help'], stdout=devnull, stderr=devnull)
@@ -435,18 +437,19 @@ def check_sphinx_intl():
     # print("The '{0}' command was not found.".format(SPHINX_INTL))
     # exit_with_code(1)
 
-    command = "{0} --help".format(SPHINX_INTL,)
-    try:
-        # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
-        exit_code = subprocess.run(command, shell=True, check=False, capture_output=True, timeout=SPHINX_BUILD_TIMEOUT).returncode
-        # print("\n\nexit_code = {0}\n\n".format(exit_code))
-        # exit_code = 1
-        # subprocess.run('ls -al', shell=True, check=True)
-    except Exception as ex:
-        print("ERROR executing process: {0}".format(ex))
-        exit_code = 1
-    if exit_code:
-        exit_with_code(exit_code)
+    # command = "{0} --help".format(SPHINX_INTL,)
+    # try:
+    #     # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
+    #     exit_code = subprocess.run(command, shell=True, check=True, capture_output=True, timeout=SPHINX_BUILD_TIMEOUT).returncode
+    #     # print("\n\nexit_code = {0}\n\n".format(exit_code))
+    #     # exit_code = 1
+    #     # subprocess.run('ls -al', shell=True, check=True)
+    #     return
+    # except Exception as ex:
+    #     print("ERROR executing process: {0}".format(ex))
+    #     exit_code = 1
+    # if exit_code:
+    #     exit_with_code(exit_code)
 
 
 def create_directory(dir_path, dir_name):
