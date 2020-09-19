@@ -82,11 +82,11 @@ jobs:
         sudo apt-get install texlive-latex-extra
     - name: Build PDF Files
       run: |
-        # python ./setup.py -l all build pdf
-        ./setup.py clean pdf
-        ./setup.py build pdf
-        ./setup.py build pot
-        ./setup.py clean pdf
+        echo python ./setup.py -l all build pdf
+        python ./setup.py clean pdf
+        python ./setup.py build pdf
+        python ./setup.py build pot
+        python ./setup.py clean pdf
         sphinx-build -b latex . _build/latex -c . -D language=fr
         sphinx-build -b latex . _build/latex -c .  -D language=fr
     - name: Build EPUB Files
