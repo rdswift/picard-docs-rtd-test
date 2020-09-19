@@ -79,7 +79,8 @@ jobs:
         sudo apt-get install latexmk xzdec texlive texlive-latex-extra
     - name: Build PDF Files
       run: |
-        python ./setup.py -l all build pdf
+        echo python ./setup.py -l all build pdf
+        sphinx-build -M latexpdf . _build -c . -D language=fr
     - name: Build EPUB Files
       run: |
         python ./setup.py -l all build epub
