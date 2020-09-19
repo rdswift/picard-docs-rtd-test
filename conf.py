@@ -1,4 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
+# -*- blah_coding: utf-8 -*-
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
@@ -50,10 +51,9 @@ supported_languages = [
 
 # -- Notice for Back of Title Page in LaTex Output ---------------------------
 
-my_notice = r'''\vspace*{\fill}
-MusicBrainz Picard User Guide by Bob Swift is licensed under CC0 1.0. To view a
-copy of this license, visit https://creativecommons.org/publicdomain/zero/1.0
-\vspace{0.1\textheight}'''
+notice_text = 'MusicBrainz Picard User Guide by Bob Swift is licensed under CC0 1.0. ' \
+    + 'To view a copy of this license, visit https://creativecommons.org/publicdomain/zero/1.0'
+my_notice = r'\vspace*{\fill}' + "\n" + notice_text + "\n" + r'\vspace{0.1\textheight}'
 
 
 # -- General configuration ---------------------------------------------------
@@ -79,17 +79,17 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build',
-    'Thumbs.db',
+    '_ignored',
+    '_images',
+    '_locale',
     '.DS_Store',
-    'README.md',
-    'html',
-    'docs',
-    'locale',
     '.git',
     '.github',
-    'images',
-    'testing',
+    'docs',
+    'html',
     'README.md',
+    'testing',
+    'Thumbs.db',
     'TODO.md',
 ]
 
@@ -97,7 +97,7 @@ exclude_patterns = [
 # -- Options for Internationalization ----------------------------------------
 
 language = default_language
-locale_dirs = ['locale']
+locale_dirs = ['_locale']
 gettext_compact = False
 # gettext_compact = True
 
@@ -167,13 +167,9 @@ latex_domain_indices = True
 # epub_baseneme = 'musicbrainzpicard'
 
 epub_theme = 'epub'
-
 epub_description = 'A User Guide for MusicBrainz Picard.'
-
 epub_author = 'Bob Swift'
-
 epub_contributor = 'Members of the MusicBrainz Community'
-
 epub_uid = 'MusicBrainzPicardUserGuide'
 
 # epub_cover = ('_static/epub_cover.png', 'epub-cover.html')
@@ -191,20 +187,13 @@ epub_use_index = True
 # sphinx-notfound-page
 # https://github.com/readthedocs/sphinx-notfound-page
 
-notfound_context = {
-    'title': 'Page Not Found',
-    'body': '''
-<h1>Page Not Found</h1>
-<p>
-We're sorry but we are unable to find the requested page.  Please use the table of contents or
-the search box in the left-hand sidebar to locate your topic.
-</p>
-<div id="content"></div>
-<p>
-If you believe that you have received this message in error, please report it on the
-<a href="https://github.com/rdswift/picard-docs/issues/new/choose" target="_blank">documentation
-project site</a>.  Thanks.
-</p>
+notfound_title = 'Page Not Found'
+notfound_text_1 = "We're sorry but we are unable to find the requested page. Please use the table " \
+    + "of contents or the search box in the left-hand sidebar to locate your topic."
+notfound_text_2 = "If you believe that you have received this message in error, please report it on " \
+    + "the <a href='https://github.com/rdswift/picard-docs/issues/new/choose' " \
+    + "target='_blank'>documentation project site</a>.  Thanks."
+notfound_script = r'''
 <script>
     var target_language = 'en';
     var target_version = 'latest';
@@ -265,5 +254,8 @@ project site</a>.  Thanks.
 
     test_url();
 </script>
-''',
+'''
+notfound_context = {
+    'title': notfound_title,
+    'body': "\n<h1>" + notfound_title + "</h1>\n<p>\n" + notfound_text_1 + "\n</p>\n<div id='content'></div>\n<p>\n" + notfound_text_2 + "\n</p>\n" + notfound_script,
 }

@@ -1,0 +1,25 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) This documentation is licensed under CC0 1.0.
+# This file is distributed under the same license as the MusicBrainz Picard package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MusicBrainz Picard v2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-15 17:14-0600\n"
+"PO-Revision-Date: 2020-09-15 17:43-0600\n"
+"Last-Translator: Bob Swift <bswift@rsds.ca>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../notices.rst:9
+msgid "Notices"
+msgstr "Avis"
+
+#: ../../notices.rst:22
+msgid "This MusicBrainz Picard User Guide is licensed under CC0 1.0 A copy of the license is available at https://creativecommons.org/publicdomain/zero/1.0"
+msgstr "Ce guide de l'utilisateur MusicBrainz Picard est sous licence CC0 1.0. Une copie de la licence est disponible sur https://creativecommons.org/publicdomain/zero/1.0"

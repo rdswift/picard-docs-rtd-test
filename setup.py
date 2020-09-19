@@ -52,13 +52,14 @@ SPHINX_BUILD = 'sphinx-build'
 SPHINX_INTL = 'sphinx-intl'
 SPHINX_BUILD_DIR = '_build'
 SPHINX_SOURCE_DIR = '.'
-SPHINX_LOCALE_DIR = 'locale'
+SPHINX_LOCALE_DIR = conf.locale_dirs[0] if conf.locale_dirs[0] else '_locale'
 SPHINX_GETTEXT_DIR = os.path.join(SPHINX_LOCALE_DIR, 'gettext')
 SPHINX_BUILD_TIMEOUT = 300
 SPHINX_BUILD_TARGETS = {
     'html': {'dir': 'html', 'cmd': 'html', 'extra': ''},
     'pdf': {'dir': 'latex', 'cmd': 'latex', 'extra': ''},
-    'epub': {'dir': 'epub', 'cmd': 'epub', 'extra': '-D master_doc="epub"'},
+    # 'epub': {'dir': 'epub', 'cmd': 'epub', 'extra': '-D master_doc="epub"'},
+    'epub': {'dir': 'epub', 'cmd': 'epub', 'extra': '-D master_doc=epub'},
 }
 OUTPUT_DIR = 'docs'
 FILE_NAME_ROOT = 'MusicBrainz_Picard'
@@ -69,7 +70,7 @@ FILE_NAME_ROOT = 'MusicBrainz_Picard'
 ######################
 
 IGNORE_INFO_MESSAGES = False
-FAIL_ON_WARNINGS = False
+FAIL_ON_WARNINGS = True
 
 
 #################################################################
@@ -414,18 +415,11 @@ def check_sphinx_build():
     """
     with open(os.devnull, 'w') as devnull:
         try:
-            if subprocess.call([SPHINX_BUILD, '--version'],
-                               stdout=devnull, stderr=devnull) == 0:
-                return
+            subprocess.call([SPHINX_BUILD, '--version'], stdout=devnull, stderr=devnull)
+            return
         except FileNotFoundError:
             pass
-    print("The '{0}' command was not found. Make sure you have Sphinx "
-          "installed, then set the SPHINXBUILD environment variable "
-          "to point to the full path of the '{0}' executable. "
-          "Alternatively you can add the directory with the "
-          "executable to your PATH. If you don't have Sphinx "
-          "installed, grab it from http://sphinx-doc.org/)"
-          .format(SPHINX_BUILD))
+    print("The '{0}' command was not found.".format(SPHINX_BUILD))
     exit_with_code(1)
 
 
@@ -434,19 +428,40 @@ def check_sphinx_intl():
     """
     with open(os.devnull, 'w') as devnull:
         try:
-            if subprocess.call([SPHINX_INTL, '--help'],
-                               stdout=devnull, stderr=devnull) == 1:
-                return
+            subprocess.call([SPHINX_INTL, '--help'], stdout=devnull, stderr=devnull)
+            return
         except FileNotFoundError:
             pass
-    print("The '{0}' command was not found. Make sure you have Sphinx "
-          "installed, then set the SPHINXBUILD environment variable "
-          "to point to the full path of the '{0}' executable. "
-          "Alternatively you can add the directory with the "
-          "executable to your PATH. If you don't have Sphinx "
-          "installed, grab it from http://sphinx-doc.org/)"
-          .format(SPHINX_INTL))
+    print("The '{0}' command was not found.".format(SPHINX_INTL))
     exit_with_code(1)
+
+
+def create_directory(dir_path, dir_name):
+    """If the specified directory does not exist, it will be created.  Includes multiple
+    checks for success to accommodate race condition in Windows.
+
+    Arguments:
+        dir_path {str} -- Path to the directory to create
+        dir_name {str} -- Name of the directory type (e.g.: 'html')
+
+    Raises:
+        Exception: Unable to create directory
+    """
+    if not os.path.exists(dir_path):
+        try:
+            print('Creating the {0} directory: {1}'.format(dir_name, dir_path))
+            os.makedirs(dir_path)
+            counter = 50
+            # Multiple checks for success to accommodate race condition in Windows
+            while counter and not os.path.exists(dir_path):
+                counter -= 1
+                time.sleep(.2)
+            if not counter:
+                raise Exception('Unable to create directory.')
+        except Exception as ex:
+            print("\nError creating the {0} directory: {1}".format(dir_name, dir_path))
+            print("Error message: {0}\n".format(ex))
+            exit_with_code(1)
 
 
 def clean_directory(dir_path, dir_name):
@@ -484,20 +499,7 @@ def clean_directory(dir_path, dir_name):
             print("\nThe {0} directory is not a directory: {1}\n".format(dir_name, dir_path))
             exit_with_code(1)
     if not os.path.exists(dir_path):
-        try:
-            print('Creating the {0} directory: {1}'.format(dir_name, dir_path))
-            os.makedirs(dir_path)
-            counter = 50
-            # Multiple checks for success to accommodate race condition in Windows
-            while counter and not os.path.exists(dir_path):
-                counter -= 1
-                time.sleep(.2)
-            if not counter:
-                raise Exception('Unable to create directory.')
-        except Exception as ex:
-            print("\nError creating the {0} directory: {1}".format(dir_name, dir_path))
-            print("Error message: {0}\n".format(ex))
-            exit_with_code(1)
+        create_directory(dir_path=dir_path, dir_name=dir_name)
 
 
 def exit_with_code(exit_code=0):
@@ -584,25 +586,25 @@ def save_version_info():
         ofile.write('default_language = "{0}"\n'.format(DEFAULT_LANGUAGE,))
         ofile.write('supported_languages = {0}\n'.format(LANGUAGES,))
         ofile.write('file_name_root = "{0}"\n'.format(FILE_NAME_ROOT,))
-    with open('index.html.template', 'r', encoding='utf8') as ifile:
-        template = ifile.read()
-    file_name = os.path.join(SPHINX_BUILD_DIR, 'top_index.html')
-    remove_file(file_name)
-    print("Saving: {0}".format(file_name,))
-    with open(file_name, 'w', encoding='utf8') as ofile:
-        ofile.write(template.replace('{{SUPPORTED_LANGUAGES}}', str(LANGUAGES)).replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{CURRENT_VERSION}}', ''))
-    file_name = os.path.join(SPHINX_BUILD_DIR, 'version_index.html')
-    remove_file(file_name)
-    print("Saving: {0}".format(file_name,))
-    with open(file_name, 'w', encoding='utf8') as ofile:
-        ofile.write(template.replace('{{SUPPORTED_LANGUAGES}}', str(LANGUAGES)).replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{CURRENT_VERSION}}', conf.version))
-    with open('version_links.js.template', 'r', encoding='utf8') as ifile:
-        template = ifile.read()
-    file_name = os.path.join(SPHINX_BUILD_DIR, 'version_links.js')
-    remove_file(file_name)
-    print("Saving: {0}".format(file_name,))
-    with open(file_name, 'w', encoding='utf8') as ofile:
-        ofile.write(template.replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{VERSION_LIST}}', str(conf.release_list)))
+    # with open('index.html.template', 'r', encoding='utf8') as ifile:
+    #     template = ifile.read()
+    # file_name = os.path.join(SPHINX_BUILD_DIR, 'top_index.html')
+    # remove_file(file_name)
+    # print("Saving: {0}".format(file_name,))
+    # with open(file_name, 'w', encoding='utf8') as ofile:
+    #     ofile.write(template.replace('{{SUPPORTED_LANGUAGES}}', str(LANGUAGES)).replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{CURRENT_VERSION}}', ''))
+    # file_name = os.path.join(SPHINX_BUILD_DIR, 'version_index.html')
+    # remove_file(file_name)
+    # print("Saving: {0}".format(file_name,))
+    # with open(file_name, 'w', encoding='utf8') as ofile:
+    #     ofile.write(template.replace('{{SUPPORTED_LANGUAGES}}', str(LANGUAGES)).replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{CURRENT_VERSION}}', conf.version))
+    # with open('version_links.js.template', 'r', encoding='utf8') as ifile:
+    #     template = ifile.read()
+    # file_name = os.path.join(SPHINX_BUILD_DIR, 'version_links.js')
+    # remove_file(file_name)
+    # print("Saving: {0}".format(file_name,))
+    # with open(file_name, 'w', encoding='utf8') as ofile:
+    #     ofile.write(template.replace('{{DEFAULT_LANGUAGE}}', DEFAULT_LANGUAGE).replace('{{VERSION_LIST}}', str(conf.release_list)))
 
 
 def do_build(target=None, language='', clean=False):
@@ -631,10 +633,29 @@ def do_build(target=None, language='', clean=False):
         print('\nCleaning build directory: {0}'.format(clean_dir))
         clean_directory(clean_dir, target)
 
-    command = ' '.join([SPHINX_BUILD, '-M', SPHINX_BUILD_TARGETS[target]['cmd'], '"' + SPHINX_SOURCE_DIR + '"', '"' + SPHINX_BUILD_DIR + '"', '-c', '.', SPHINX_BUILD_TARGETS[target]['extra'], language_option])
+    # # command = ' '.join([SPHINX_BUILD, '-M', SPHINX_BUILD_TARGETS[target]['cmd'], '"' + SPHINX_SOURCE_DIR + '"', '"' + SPHINX_BUILD_DIR + '"', '-c', '.', SPHINX_BUILD_TARGETS[target]['extra'], language_option])
+    # # command = [SPHINX_BUILD, SPHINX_BUILD_TARGETS[target]['cmd'], SPHINX_SOURCE_DIR, SPHINX_BUILD_DIR, '-c .', SPHINX_BUILD_TARGETS[target]['extra'], language_option]
+    # command = [SPHINX_BUILD, '-b ' + SPHINX_BUILD_TARGETS[target]['cmd'], SPHINX_SOURCE_DIR, SPHINX_BUILD_DIR, '-c .']
+    # if SPHINX_BUILD_TARGETS[target]['extra']:
+    #     command = command.append(SPHINX_BUILD_TARGETS[target]['extra'])
+    # if language_option:
+    #     command = command.append(language_option)
+    command = '{0} -b {1} {2} {3} -c . {4} {5}'.format(
+        SPHINX_BUILD,
+        SPHINX_BUILD_TARGETS[target]['cmd'],
+        SPHINX_SOURCE_DIR,
+        # SPHINX_BUILD_DIR,
+        os.path.join(SPHINX_BUILD_DIR, SPHINX_BUILD_TARGETS[target]['dir']),
+        SPHINX_BUILD_TARGETS[target]['extra'],
+        language_option,
+        ).strip()
     print('\nBuilding with command: {0}\n'.format(command))
     try:
-        exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
+        # exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT, shell=True)
+        exit_code = subprocess.run(command, shell=True, check=True, capture_output=False, timeout=SPHINX_BUILD_TIMEOUT).returncode
+        # print("\n\nexit_code = {0}\n\n".format(exit_code))
+        # exit_code = 1
+        # subprocess.run('ls -al', shell=True, check=True)
     except Exception as ex:
         print("ERROR executing process: {0}".format(ex))
         exit_code = 1
@@ -753,7 +774,7 @@ def build_pot():
     """
     check_sphinx_build()
     command = ' '.join([SPHINX_BUILD, '-M', 'gettext', '"' + SPHINX_SOURCE_DIR + '"', '"' + SPHINX_LOCALE_DIR + '"', '-c', '.', '-D', 'language={0}'.format(DEFAULT_LANGUAGE)])
-    print('\nExtracting POT files with command: {0}\n'.format(command))
+    print('Extracting POT files with command: {0}\n'.format(command))
     exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
     if exit_code:
         exit_with_code(exit_code)
@@ -776,6 +797,8 @@ def update_po(language):
     check_sphinx_intl()
     # command = ' '.join([SPHINX_INTL, 'update', '-p', '"' + os.path.join(SPHINX_LOCALE_DIR, SPHINX_GETTEXT_DIR) + '"', '-l', language])
     command = ' '.join([SPHINX_INTL, 'update', '-p', '"' + SPHINX_GETTEXT_DIR + '"', '-l', language])
+    # command = ' '.join([SPHINX_INTL, 'build', '-d', '"' + SPHINX_GETTEXT_DIR + '"', '-o', '"' + SPHINX_LOCALE_DIR + '"', '-l', language])
+    # command = ' '.join([SPHINX_INTL, 'update', '-l', language])
     print('Updating PO files with command: {0}\n'.format(command))
     exit_code = subprocess.call(command, timeout=SPHINX_BUILD_TIMEOUT)
     if exit_code:
@@ -850,13 +873,13 @@ def main():
     elif 'build_target' in vars(args):
         if args.build_target in SPHINX_BUILD_TARGETS.keys():
             for lang in process_languages:
-                do_build(target=args.build_target, language=lang)
+                do_build(target=args.build_target, language=lang, clean=True)
 
         elif args.build_target == 'po':
-            build_pot()
-            # for lang in process_languages:
-            #     if lang != DEFAULT_LANGUAGE:
-            #         update_po(lang)
+            # build_pot()
+            for lang in process_languages:
+                if lang != DEFAULT_LANGUAGE:
+                    update_po(lang)
 
         elif args.build_target == 'pot':
             build_pot()
