@@ -45,7 +45,7 @@ msgid ""
 "been enabled.  See :ref:`action_options` for more information."
 msgstr ""
 "Vérifiez que le paramètre :menuelection:`\"Options --> Enregistrer les "
-"variables\"` a été activé. Voir :ref`action_options` pour plus "
+"variables\"` a été activé. Voir :ref:`action_options` pour plus "
 "d'informations."
 
 #: ../../troubleshooting/missing_tags.rst:21

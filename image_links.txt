@@ -1,0 +1,20 @@
+.. |img-plugin-download| image:: images/options-plugin-download.png
+   :width: 18pt
+   :height: 18pt
+
+.. |img-plugin-reload| image:: images/options-plugin-reload.png
+   :width: 18pt
+   :height: 18pt
+
+.. |img-plugin-enabled| image:: images/options-plugin-enabled.png
+   :width: 24pt
+   :height: 24pt
+
+.. |img-plugin-disabled| image:: images/options-plugin-disabled.png
+   :width: 24pt
+   :height: 24pt
+
+.. |img-plugin-trash| image:: images/options-plugin-trash.png
+   :width: 24pt
+   :height: 24pt
+

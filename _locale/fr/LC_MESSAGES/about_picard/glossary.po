@@ -237,8 +237,8 @@ msgid ""
 msgstr ""
 "Inversement, deux CD différents peuvent avoir exactement le même jeu de "
 "décalages d'image et donc le même ID de disque. Par exemple, "
-"\"`lwHl8fGzJyLXQR33ug60E8jhf4k-\" <https://musicbrainz.org/cdtoc/"
-"lwHl8fGzJyLXQR33ug60E8jhf4k->`_ s'applique à une large `variété de versions  "
+"``lwHl8fGzJyLXQR33ug60E8jhf4k-`` s'applique à une large `variété de versions "
+"<https://musicbrainz.org/cdtoc/lwHl8fGzJyLXQR33ug60E8jhf4k->`_ "
 "par une variété d'artistes."
 
 #: ../../about_picard/glossary.rst:123
