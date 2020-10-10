@@ -43,7 +43,7 @@ version = release
 default_language = 'en'
 supported_languages = [
     ('en', 'English'),
-    # ('fr', 'Française'),
+    ('fr', 'Française'),
     # ('de', 'Deutsche'),
     # ('es', 'Española'),
 ]
@@ -78,12 +78,12 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     '_build',
+    '_locale',
     'Thumbs.db',
     '.DS_Store',
     'README.md',
     'html',
     'docs',
-    'locale',
     '.git',
     '.github',
     'images',
@@ -96,7 +96,7 @@ exclude_patterns = [
 # -- Options for Internationalization ----------------------------------------
 
 language = default_language
-locale_dirs = ['locale']
+locale_dirs = ['_locale']
 gettext_compact = False
 # gettext_compact = True
 
