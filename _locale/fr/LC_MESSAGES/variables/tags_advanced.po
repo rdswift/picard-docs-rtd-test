@@ -31,9 +31,8 @@ msgid ""
 "MusicBrainz <genre_settings>` settings in Picard."
 msgstr ""
 "Vous pouvez rendre des balises supplémentaires disponibles en activant les "
-"paramètres :ref:`Relations avancées <advanced_relationships>` et :ref:"
-"`Utiliser les genres de MusicBrainz <genre_settings` paramètres dans "
-"Picard."
+"paramètres \"Relations avancées\" et \"Utiliser les genres de MusicBrainz\" "
+"paramètres dans Picard."
 
 #: ../../variables/tags_advanced.rst:21
 msgid ""

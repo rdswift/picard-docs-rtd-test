@@ -548,9 +548,8 @@ msgid ""
 "<ref_primaryreleasetype>` and :ref:`_secondaryreleasetype "
 "<ref_secondaryreleasetype>`)"
 msgstr ""
-"Le type de groupe de version (voir aussi :ref:`_primaryreleasetype "
-"<ref_primaryreleasetype` et :ref:`_secondaryreleasetype "
-"<ref_secondaryreleasetype`)."
+"Le type de groupe de version (voir aussi les variables de "
+"base _primaryreleasetype et _secondaryreleasetype)."
 
 #: ../../variables/tags_basic.rst:251
 msgid "**script**"
