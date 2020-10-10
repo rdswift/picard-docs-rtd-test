@@ -246,7 +246,7 @@ several other more minor settings) by wrapping them between percent '%' symbols 
 
 **releasetype**
 
-    Release Group Type (see also :ref:`_primaryreleasetype <ref_primaryreleasetype>` and :ref:`_secondaryreleasetype <ref_secondaryreleasetype>`)
+    Release Group Type (also see the basic variables "_primaryreleasetype" and "_secondaryreleasetype")
 
 **script**
 

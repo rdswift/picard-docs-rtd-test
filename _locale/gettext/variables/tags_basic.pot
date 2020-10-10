@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 11:09-0600\n"
+"POT-Creation-Date: 2020-10-10 14:43-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,7 +413,7 @@ msgid "**releasetype**"
 msgstr ""
 
 #: ../../variables/tags_basic.rst:249
-msgid "Release Group Type (see also :ref:`_primaryreleasetype <ref_primaryreleasetype>` and :ref:`_secondaryreleasetype <ref_secondaryreleasetype>`)"
+msgid "Release Group Type (also see the basic variables \"_primaryreleasetype\" and \"_secondaryreleasetype\")"
 msgstr ""
 
 #: ../../variables/tags_basic.rst:251
