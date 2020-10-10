@@ -853,7 +853,7 @@ def main():
                 do_build(target=args.build_target, language=lang)
 
         elif args.build_target == 'po':
-            build_pot()
+            # build_pot()
             for lang in process_languages:
                 if lang != DEFAULT_LANGUAGE:
                     update_po(lang)
