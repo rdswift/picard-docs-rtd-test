@@ -187,6 +187,7 @@ epub_use_index = True
 # sphinx-notfound-page
 # https://github.com/readthedocs/sphinx-notfound-page
 
+notfound_template = 'custom_404.html'
 notfound_title = 'Page Not Found'
 notfound_text_1 = "We're sorry but we are unable to find the requested page. Please use the table " \
     + "of contents or the search box in the left-hand sidebar to locate your topic."
