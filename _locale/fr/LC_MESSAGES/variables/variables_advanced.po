@@ -28,8 +28,8 @@ msgid ""
 "If you enable tagging with \"Advanced Relationships\", you get these "
 "extra variables:"
 msgstr ""
-"Si vous activez le balisage avec :ref:`Relations avancées "
-"<advanced_relationships>`, vous obtenez ces variables supplémentaires:"
+"Si vous activez le balisage avec \"Relations avancées\", "
+"vous obtenez ces variables supplémentaires:"
 
 #: ../../variables/variables_advanced.rst:20
 msgid ""
