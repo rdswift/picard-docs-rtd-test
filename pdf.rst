@@ -12,7 +12,7 @@ MusicBrainz Picard
 ==================
 
 
-.. include:: image_links.txt
+.. .. include:: image_links.txt
 
 
 .. toctree::
