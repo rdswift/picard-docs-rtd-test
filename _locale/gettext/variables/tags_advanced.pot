@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 14:43-0600\n"
+"POT-Creation-Date: 2020-10-11 09:04-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Advanced Tags"
 msgstr ""
 
 #: ../../variables/tags_advanced.rst:16
-msgid "You can make additional tags available by enabling the \"Advanced Relationships\" and the \"Use genres from MusicBrainz\" settings in Picard."
+msgid "You can make additional tags available by enabling the :ref:`Advanced Relationships <advanced_relationships>` and the :ref:`Use genres from MusicBrainz <genre_settings>` settings in Picard."
 msgstr ""
 
 #: ../../variables/tags_advanced.rst:21

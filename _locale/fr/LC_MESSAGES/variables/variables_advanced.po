@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 14:43-0600\n"
+"POT-Creation-Date: 2020-10-11 09:04-0600\n"
 "PO-Revision-Date: 2020-10-09 17:01-0600\n"
 "Last-Translator: Bob Swift <bswift@rsds.ca>\n"
 "Language: fr\n"
@@ -24,12 +24,13 @@ msgid "Advanced Variables"
 msgstr "Variables avancées"
 
 #: ../../variables/variables_advanced.rst:16
+#, fuzzy
 msgid ""
-"If you enable tagging with \"Advanced Relationships\", you get these "
-"extra variables:"
+"If you enable tagging with :ref:`Advanced Relationships "
+"<advanced_relationships>`, you get these extra variables:"
 msgstr ""
-"Si vous activez le balisage avec \"Relations avancées\", "
-"vous obtenez ces variables supplémentaires:"
+"Si vous activez le balisage avec :ref:`Relations avancées "
+"<advanced_relationships>`, vous obtenez ces variables supplémentaires:"
 
 #: ../../variables/variables_advanced.rst:20
 msgid ""
