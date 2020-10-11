@@ -850,7 +850,7 @@ def main():
     elif 'build_target' in vars(args):
         if args.build_target in SPHINX_BUILD_TARGETS.keys():
             for lang in process_languages:
-                do_build(target=args.build_target, language=lang)
+                do_build(target=args.build_target, language=lang, clean=True)
 
         elif args.build_target == 'po':
             # build_pot()
