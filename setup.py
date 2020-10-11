@@ -758,12 +758,12 @@ def build_pot():
     if exit_code:
         exit_with_code(exit_code)
 
-    check_sphinx_intl()
-    print('\nUpdating PO files for other languages.')
-    for lang in LANGUAGE_LIST.keys():
-        if lang != DEFAULT_LANGUAGE:
-            print("\n\nUpdating the '{0}' ({1}) files.\n".format(lang, LANGUAGE_LIST[lang]))
-            update_po(lang)
+    # check_sphinx_intl()
+    # print('\nUpdating PO files for other languages.')
+    # for lang in LANGUAGE_LIST.keys():
+    #     if lang != DEFAULT_LANGUAGE:
+    #         print("\n\nUpdating the '{0}' ({1}) files.\n".format(lang, LANGUAGE_LIST[lang]))
+    #         update_po(lang)
 
 
 def update_po(language):
