@@ -82,15 +82,8 @@ Picard currently supports most music file formats, with Matroska (.mka) being on
 Microsoft WAVE (.wav) files can be fingerprinted and renamed and can be tagged using ID3v2 tags, but this is
 not supported by all playback software.  In addition, Picard does not support writing custom tags for all formats.
 
-.. only:: html
-
-   The :doc:`Picard Tag Mappings <../appendices/tag_mapping>` section provides more information
-   regarding the mapping between Picard internal tag names and various tagging formats.
-
-.. only:: latex
-
-   The :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` section provides more information
-   regarding the mapping between Picard internal tag names and various tagging formats.
+The :doc:`Picard Tag Mappings <../appendices/tag_mapping>` section provides more information
+regarding the mapping between Picard internal tag names and various tagging formats.
 
 **Request Rate Limiting**
 

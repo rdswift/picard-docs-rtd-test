@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 14:09-0600\n"
+"POT-Creation-Date: 2020-10-15 17:42-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,10 +56,6 @@ msgstr ""
 msgid "Confirm that the file type that you are writing actually supports the tags that are to be written.  Not all file types support all the tags Picard supports."
 msgstr ""
 
-#: ../../troubleshooting/missing_tags.rst:43
+#: ../../troubleshooting/missing_tags.rst:41
 msgid "Please see the :doc:`../appendices/tag_mapping` section for details about the tags supported by various file formats."
-msgstr ""
-
-#: ../../troubleshooting/missing_tags.rst:47
-msgid "Please see the :doc:`../appendices/tag_mapping_pdf` section for details about the tags supported by various file formats."
 msgstr ""

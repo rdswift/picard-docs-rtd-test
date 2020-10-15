@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 14:09-0600\n"
-"PO-Revision-Date: 2020-10-15 14:58-0600\n"
+"POT-Creation-Date: 2020-10-15 16:24-0600\n"
+"PO-Revision-Date: 2020-10-15 16:29-0600\n"
 "Last-Translator: Bob Swift <bswift@rsds.ca>\n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Other Information"
 msgstr "Les autres informations"
 
-#: ../../variables/variables_other_information.rst:14
+#: ../../variables/variables_other_information.rst:12
 msgid ""
 "For technical details on how tags are written into files, see the :doc:"
 "`Picard Tag Mapping <../appendices/tag_mapping>` section."
@@ -33,16 +33,7 @@ msgstr ""
 "fichiers, consultez la section :doc:`Picard Tag Mapping <../appendices/"
 "tag_mapping>`."
 
-#: ../../variables/variables_other_information.rst:18
-msgid ""
-"For technical details on how tags are written into files, see the :doc:"
-"`Picard Tag Mapping <../appendices/tag_mapping_pdf>` section."
-msgstr ""
-"Pour des détails techniques sur l'écriture des balises dans les "
-"fichiers, consultez la section :doc:`Picard Tag Mapping <../appendices/"
-"tag_mapping_pdf>`."
-
-#: ../../variables/variables_other_information.rst:20
+#: ../../variables/variables_other_information.rst:14
 msgid ""
 "If you set new variables, these will be saved as new tags in ID3, APEv2 "
 "and VORBIS based files. For ID3 based files these will be saved to, and "
@@ -56,7 +47,7 @@ msgstr ""
 "l'utilisateur ID3 (TXXX). Ils ne seront pas enregistrés dans des "
 "fichiers ASF ou MP4."
 
-#: ../../variables/variables_other_information.rst:23
+#: ../../variables/variables_other_information.rst:17
 msgid ""
 "For ID3 based tags (i.e.: MP3 files), you can also set ID3 tags directly "
 "from your scripts by setting a special variable starting with \"_id3:\". "
@@ -68,3 +59,11 @@ msgstr ""
 "définissant une variable spéciale commençant par \"_id3:\". "
 "Actuellement, ces balises ne sont pas chargées dans les variables "
 "lorsque vous rechargez le fichier dans Picard. (*depuis Picard 0.9*)"
+
+#~ msgid ""
+#~ "For technical details on how tags are written into files, see the :"
+#~ "doc:`Picard Tag Mapping <../appendices/tag_mapping_pdf>` section."
+#~ msgstr ""
+#~ "Pour des détails techniques sur l'écriture des balises dans les "
+#~ "fichiers, consultez la section :doc:`Picard Tag Mapping <../"
+#~ "appendices/tag_mapping_pdf>`."

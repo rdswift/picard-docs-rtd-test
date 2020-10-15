@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 14:09-0600\n"
-"PO-Revision-Date: 2020-10-15 14:35-0600\n"
+"POT-Creation-Date: 2020-10-15 16:24-0600\n"
+"PO-Revision-Date: 2020-10-15 16:25-0600\n"
 "Last-Translator: Bob Swift <bswift@rsds.ca>\n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -227,7 +227,7 @@ msgstr ""
 "en charge par tous les logiciels de lecture. De plus, Picard ne prend pas "
 "en charge l'écriture de balises personnalisées pour tous les formats."
 
-#: ../../about_picard/introduction.rst:87
+#: ../../about_picard/introduction.rst:85
 msgid ""
 "The :doc:`Picard Tag Mappings <../appendices/tag_mapping>` section "
 "provides more information regarding the mapping between Picard internal "
@@ -237,21 +237,11 @@ msgstr ""
 "plus d'informations concernant le mappage entre les noms de balises "
 "internes Picard et divers formats de balisage."
 
-#: ../../about_picard/introduction.rst:92
-msgid ""
-"The :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` section "
-"provides more information regarding the mapping between Picard internal "
-"tag names and various tagging formats."
-msgstr ""
-"La section :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` "
-"fournit plus d'informations concernant le mappage entre les noms de "
-"balises internes Picard et divers formats de balisage."
-
-#: ../../about_picard/introduction.rst:95
+#: ../../about_picard/introduction.rst:88
 msgid "**Request Rate Limiting**"
 msgstr "**Demande de limitation de débit**"
 
-#: ../../about_picard/introduction.rst:97
+#: ../../about_picard/introduction.rst:90
 msgid ""
 "Picard's metadata retrieval is limited to the standard **one request per "
 "second** rate limiting for the MusicBrainz API.  This becomes quite "
@@ -265,11 +255,11 @@ msgstr ""
 "liste de fichiers, et est exacerbé par les extensions qui effectuent des "
 "demandes d'informations supplémentaires à partir de la base de données."
 
-#: ../../about_picard/introduction.rst:101
+#: ../../about_picard/introduction.rst:94
 msgid "**Network File Processing**"
 msgstr "**Traitement de fichiers réseau**"
 
-#: ../../about_picard/introduction.rst:103
+#: ../../about_picard/introduction.rst:96
 msgid ""
 "Sometimes Picard needs to rewrite the entire music file in order to add or "
 "update the tags.  This can take a few seconds, and the delay becomes even "
@@ -323,3 +313,12 @@ msgstr ""
 #~ "formats. La page Web `Picard Tag Mappings <https://picard.musicbrainz."
 #~ "org/docs/mappings/>`_ fournit plus d'informations concernant le mappage "
 #~ "entre les noms de balises internes Picard et divers formats de balisage."
+
+#~ msgid ""
+#~ "The :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` section "
+#~ "provides more information regarding the mapping between Picard internal "
+#~ "tag names and various tagging formats."
+#~ msgstr ""
+#~ "La section :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` "
+#~ "fournit plus d'informations concernant le mappage entre les noms de "
+#~ "balises internes Picard et divers formats de balisage."

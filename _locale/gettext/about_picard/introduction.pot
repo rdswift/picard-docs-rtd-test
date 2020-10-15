@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBrainz Picard v2.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 14:09-0600\n"
+"POT-Creation-Date: 2020-10-15 17:42-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,26 +96,22 @@ msgstr ""
 msgid "Picard currently supports most music file formats, with Matroska (.mka) being one notable exception. Microsoft WAVE (.wav) files can be fingerprinted and renamed and can be tagged using ID3v2 tags, but this is not supported by all playback software.  In addition, Picard does not support writing custom tags for all formats."
 msgstr ""
 
-#: ../../about_picard/introduction.rst:87
+#: ../../about_picard/introduction.rst:85
 msgid "The :doc:`Picard Tag Mappings <../appendices/tag_mapping>` section provides more information regarding the mapping between Picard internal tag names and various tagging formats."
 msgstr ""
 
-#: ../../about_picard/introduction.rst:92
-msgid "The :doc:`Picard Tag Mappings <../appendices/tag_mapping_pdf>` section provides more information regarding the mapping between Picard internal tag names and various tagging formats."
-msgstr ""
-
-#: ../../about_picard/introduction.rst:95
+#: ../../about_picard/introduction.rst:88
 msgid "**Request Rate Limiting**"
 msgstr ""
 
-#: ../../about_picard/introduction.rst:97
+#: ../../about_picard/introduction.rst:90
 msgid "Picard's metadata retrieval is limited to the standard **one request per second** rate limiting for the MusicBrainz API.  This becomes quite noticeable when trying to process a large list of files, and is exacerbated by extensions that perform additional information requests from the database."
 msgstr ""
 
-#: ../../about_picard/introduction.rst:101
+#: ../../about_picard/introduction.rst:94
 msgid "**Network File Processing**"
 msgstr ""
 
-#: ../../about_picard/introduction.rst:103
+#: ../../about_picard/introduction.rst:96
 msgid "Sometimes Picard needs to rewrite the entire music file in order to add or update the tags.  This can take a few seconds, and the delay becomes even longer if the file is accessed across a network (e.g.: file is read from or written to a NAS device).  The recommended \"best practice\" is to process all files on a local drive and then move them to the desired remote directory once processing is complete."
 msgstr ""
