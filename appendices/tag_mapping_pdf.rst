@@ -7,3 +7,11 @@ Appendix 2: Tag Mapping
 =======================
 
 .. include:: tag_mapping_common.txt
+
+.. raw:: latex
+
+   \clearpage
+
+..   \pagebreak
+..   \newpage
+..   \clearpage

@@ -7,3 +7,11 @@ Appendix 3: Command Line Options
 ================================
 
 .. include:: command_line_common.txt
+
+.. raw:: latex
+
+   \clearpage
+
+..   \pagebreak
+..   \newpage
+..   \clearpage
