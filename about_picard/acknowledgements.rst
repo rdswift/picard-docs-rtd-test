@@ -64,7 +64,7 @@ Contributors include (in alphabetic surname order):
 - Philipp Wolfer
 - Shadab Zafar
 
-.. Note::
+.. note::
 
    There are likely others that have not yet been identified, so we apologize if your name has been
    missed.  Please let us know and we'll make sure that it is added to the list.
