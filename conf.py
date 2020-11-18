@@ -149,8 +149,8 @@ latex_documents = [
 # latex_toplevel_sectioning = 'chapter'
 
 # latex_show_urls = 'inline'
-latex_show_urls = 'footnote'
-# latex_show_urls = 'no'
+# latex_show_urls = 'footnote'
+latex_show_urls = 'no'
 
 latex_elements = {
     'papersize': 'letterpaper',
