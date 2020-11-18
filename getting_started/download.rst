@@ -47,3 +47,7 @@ You can now install Picard:
 .. code-block:: bash
 
    flatpak install flathub org.musicbrainz.Picard
+
+.. raw:: latex
+
+   \clearpage

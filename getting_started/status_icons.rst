@@ -145,3 +145,6 @@ Track Icons
 
    This icon indicates that Picard encountered an error while trying to save the track.  This is typically due to the file being marked as read-only, or you do not have sufficient permission to save the file in the specified directory.
 
+.. raw:: latex
+
+   \clearpage
