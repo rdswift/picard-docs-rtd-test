@@ -1,14 +1,7 @@
 .. MusicBrainz Picard Documentation Project
-.. Prepared in 2020 by Bob Swift (bswift@rsds.ca)
-.. This MusicBrainz Picard User Guide is licensed under CC0 1.0
-.. A copy of the license is available at https://creativecommons.org/publicdomain/zero/1.0
 
-
-Main Screen
-===========
-
-.. index::
-   single: user interface; main screen
+:index:`Main Screen <user interface; main screen>`
+===================================================
 
 .. Picard's main screen is comprised of a number of sections, as described below:
 

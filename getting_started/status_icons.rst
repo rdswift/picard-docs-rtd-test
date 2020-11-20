@@ -1,24 +1,13 @@
 .. MusicBrainz Picard Documentation Project
-.. Prepared in 2020 by Bob Swift (bswift@rsds.ca)
-.. This MusicBrainz Picard User Guide is licensed under CC0 1.0
-.. A copy of the license is available at https://creativecommons.org/publicdomain/zero/1.0
 
-
-Status Icons
-============
-
-.. index::
-   single: icons; status
+:index:`Status Icons <icons; status>`
+======================================
 
 When albums and tracks are displayed in the right-hand pane, each line begins with an icon
 to indicate the status of the item.
 
-.. index::
-   single: icons; album
-   single: icons; release
-
-Album / Release Icons
----------------------
+:index:`Album / Release Icons <icons; album, icons; release>`
+--------------------------------------------------------------
 
 .. |img-release| image:: images/release.png
    :width: 24pt
@@ -66,11 +55,8 @@ Album / Release Icons
    |
 
 
-.. index::
-   single: icons; track
-
-Track Icons
------------
+:index:`Track Icons <icons; track>`
+------------------------------------
 
 .. |img-track-audio| image:: images/track-audio.png
    :width: 24pt
